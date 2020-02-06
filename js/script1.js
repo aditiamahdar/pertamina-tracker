@@ -165,7 +165,7 @@ function login(code) { /// Login result
 	sess.loadLibrary("itemIcon");
 	sess.loadLibrary("unitTripDetector");
 	sess.loadLibrary("unitSensors");
-	
+
 	// var mt = "B9714SFU";
 	var mt = get_html_var("mt");
 
@@ -183,6 +183,10 @@ function login(code) { /// Login result
 
 			$("#add_btn").prop("disabled", false);
 
+      var autoplay = get_html_var("autoplay", 0);
+      if (autoplay == 1){
+        addDataStorage();
+      }
 		}
 	);
 
@@ -520,8 +524,28 @@ function addDataStorage() {
 
 		initTrack(layer, obj.trackColor);
 		initMessages(layer.getUnitId());
-		activateUI(true);
+	  activateUI(true);
+    var autoplay = get_html_var('autoplay', 0);
+    if (autoplay == 1) {
+      playFullMap();
+    }
 	});
+}
+
+var play = function(){
+  $("#play_btn").css("background","url('img/pause.png') no-repeat");
+  state = "PLAY";
+  slide();
+}
+
+var playFullMap = function(){
+  play();
+  $('#menu').hide();
+  $('#map').css({left: '0px'});
+  $('.unit_follow_btn').click();
+  setTimeout(function(){
+    $('#control').hide();
+  }, 1000);
 }
 
 function updateDataStorage(id) {

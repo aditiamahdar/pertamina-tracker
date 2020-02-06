@@ -55,8 +55,9 @@ if (isset($in_token)){
 	echo "Access Denied";
 }
 
-echo "Location: http://localhost:8888?authHash=".$auth_Hash."&from=".$from."&to=".$to."&mt=".$in_mt;
-header("Location: http://localhost:8888?authHash=".$auth_Hash."&from=".$from."&to=".$to."&mt=".$in_mt);
+$redirect_to = "Location: https://tracker.viralab.id?authHash=".$auth_Hash."&from=".$from."&to=".$to."&mt=".$in_mt."&autoplay=1";
+// echo $redirect_to;
+header($redirect_to);
 die();
 
 ?>

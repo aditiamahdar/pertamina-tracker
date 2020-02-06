@@ -46,7 +46,7 @@ if (isset($in_token)){
 
 $redirect_to = "Location: https://api.fleetsight.dev/patra/track/dev/?authHash=".$auth_Hash."&from=2020-01-06T03:00:00&to=2020-01-06T04:30:00&mt=B9714SFU";
 // $redirect_to = "Location: http://localhost:8888/?authHash=".$auth_Hash."&from=2020-01-06T03:00:00&to=2020-01-06T04:30:00&mt=B9714SFU";
-echo $redirect_to;
+// echo $redirect_to;
 header($redirect_to);
 die();
 
