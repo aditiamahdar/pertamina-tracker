@@ -43,21 +43,21 @@ if (isset($in_token)){
 		// echo json_encode($result_array['authHash']);
 		$auth_Hash= $result_array['authHash'];
 
-		echo "\n";
+		// echo "\n";
 
 	} else {
 		echo WialonError::error($json['error']);
 		echo "Invalid Parameter";
 	}
-
-
 }else{
 	echo "Access Denied";
 }
 
-$redirect_to = "Location: https://tracker.viralab.id?authHash=".$auth_Hash."&from=".$from."&to=".$to."&mt=".$in_mt."&autoplay=1";
-// echo $redirect_to;
+$autoplay = 1;
+$domain = "https://tracker.viralab.id";
+// $domain = "http://localhost:8888";
+$redirect_to = "Location: ".$domain."?authHash=".$auth_Hash."&from=".$from."&to=".$to."&mt=".$in_mt."&autoplay=".$autoplay;
+
 header($redirect_to);
 die();
-
 ?>

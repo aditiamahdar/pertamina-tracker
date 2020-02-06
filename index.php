@@ -67,30 +67,32 @@
 			<div id="tracks_list"></div>
 		</div>
 		<div id="map"></div>
-		<div id="control">
-			<div id="info_block">
-				<div id="photos"></div>
-				<div id="graph"></div>
-			</div>
-			<div id="playline_block">
-				<div class="b1">
-					<div id="step_val" title="">10x</div>
-					<button disabled id="play_btn" type="button"></button>
-					<div id="t_curr"><span class="d"></span><span class="t"></span></div>
-					<button disabled id="tostart_btn" type="button"></button>
-					<button disabled id="stepleft_btn" type="button"></button>
-				</div>
-				<div class="timeline_wrapper">
-					<div id="range"></div>
-					<div id="slider"></div>
-				</div>
-				<div class="b2">
-					<button disabled id="stepright_btn" type="button" ></button>
-					<button disabled id="toend_btn" type="button" ></button>
-					<button disabled id="settings_btn" type="button" ></button>
-				</div>
-			</div>
-		</div>
+    <div id="control-wrapper">
+  		<div id="control">
+  			<div id="info_block">
+  				<div id="photos"></div>
+  				<div id="graph"></div>
+  			</div>
+  			<div id="playline_block">
+  				<div class="b1">
+  					<div id="step_val" title="">10x</div>
+  					<button disabled id="play_btn" type="button"></button>
+  					<div id="t_curr"><span class="d"></span><span class="t"></span></div>
+  					<button disabled id="tostart_btn" type="button"></button>
+  					<button disabled id="stepleft_btn" type="button"></button>
+  				</div>
+  				<div class="timeline_wrapper">
+  					<div id="range"></div>
+  					<div id="slider"></div>
+  				</div>
+  				<div class="b2">
+  					<button disabled id="stepright_btn" type="button" ></button>
+  					<button disabled id="toend_btn" type="button" ></button>
+  					<button disabled id="settings_btn" type="button" ></button>
+  				</div>
+  			</div>
+  		</div>
+    </div>
 	</div>
 	<!-- Dialogs and popups -->
 	<img id="photo_hover" src="img/logo.png"/>
