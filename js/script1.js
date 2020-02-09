@@ -1042,6 +1042,23 @@ function showHoverInfo(item) {
   }
 }
 
+function addSPBUMarkers(unitId, data){
+  var spbuIcon = L.icon({
+    iconUrl: "img/stop.png",
+    iconSize: [30, 30],
+    iconAnchor: [0, 0]
+  });
+
+  data.forEach(function(spbu){
+    var latlong = L.latLng(spbu.latitude, spbu.longitude);
+    var spbuMarker = L.marker(latlong, {
+      icon: spbuIcon,
+      unitId: unitId
+    });
+    markersLayer.addLayer(spbuMarker);
+  })
+}
+
 function initTrack(layer, color, batch) {
   if(!layer) return;
 
@@ -1052,6 +1069,8 @@ function initTrack(layer, color, batch) {
   var n = unit.getName();
   var first = layer.getFirstPoint();
   var last = layer.getLastPoint();
+
+  if (spbu_data.length > 0) addSPBUMarkers(unitId, spbu_data);
 
   if( DataStorage[unitId] ){ // update
 
