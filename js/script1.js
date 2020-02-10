@@ -1043,13 +1043,19 @@ function showHoverInfo(item) {
 }
 
 function addSPBUMarkers(unitId, data){
-  var spbuIcon = L.icon({
-    iconUrl: "img/stop.png",
-    iconSize: [30, 30],
-    iconAnchor: [0, 0]
-  });
+  // var spbuIcon = L.icon({
+  //   iconUrl: "img/stop.png",
+  //   iconSize: [30, 30],
+  //   iconAnchor: [15, 15]
+  // });
 
   data.forEach(function(spbu){
+    var spbuIcon = L.divIcon({
+      className: 'spbu-icon',
+      html: "<div class='spbu-number'>"+spbu.no+"</div>",
+      iconSize: [30, 30],
+      iconAnchor: [0, 30]
+    });
     var latlong = L.latLng(spbu.latitude, spbu.longitude);
     var spbuMarker = L.marker(latlong, {
       icon: spbuIcon,

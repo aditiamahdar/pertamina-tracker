@@ -50,6 +50,18 @@ $mysqli->close();
       APP_CONFIG=config;
     }
   </script>
+  <style type="text/css">
+    .spbu-number {
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #ed1b30;
+      padding: 1.5px;
+      border-radius: 3px;
+      color: white;
+      font-size: 11px;
+    }
+  </style>
 </head>
 <body>
   <div id="header">
