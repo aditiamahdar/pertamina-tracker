@@ -1052,9 +1052,9 @@ function addSPBUMarkers(unitId, data){
   data.forEach(function(spbu){
     var spbuIcon = L.divIcon({
       className: 'spbu-icon',
-      html: "<div class='spbu-number'>"+spbu.no+"</div>",
-      iconSize: [30, 30],
-      iconAnchor: [0, 30]
+      html: "<div style='background-color:#ed1b30;' class='marker-pin'></div><div class='spbu-number'>"+spbu.no+"</div>",
+      iconSize: [30, 42],
+      iconAnchor: [15, 42]
     });
     var latlong = L.latLng(spbu.latitude, spbu.longitude);
     var spbuMarker = L.marker(latlong, {

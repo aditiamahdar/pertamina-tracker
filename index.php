@@ -51,12 +51,32 @@ $mysqli->close();
     }
   </script>
   <style type="text/css">
+    .marker-pin {
+      width: 30px;
+      height: 30px;
+      border-radius: 50% 50% 50% 0;
+      background: #c30b82;
+      position: absolute;
+      transform: rotate(-45deg);
+      left: 50%;
+      top: 50%;
+      margin: -15px 0 0 -15px;
+    }
+    .marker-pin::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        margin: 5px 0 0 5px;
+        background: #fff;
+        position: absolute;
+        border-radius: 50%;
+     }
     .spbu-number {
       position: absolute;
-      left: 0;
-      top: 0;
+      left: 32px;
+      top: 10px;
       background: #ed1b30;
-      padding: 1.5px;
+      padding: 1.5px 5px;
       border-radius: 3px;
       color: white;
       font-size: 11px;
