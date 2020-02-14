@@ -1,9 +1,15 @@
 <?php
+// $dbconfig = [
+//   'host' => 'localhost',
+//   'username' => 'root',
+//   'password' => 'root',
+//   'name' => 'pertamina_tracker'
+// ];
 $dbconfig = [
   'host' => 'localhost',
-  'username' => 'root',
-  'password' => 'root',
-  'name' => 'pertamina_tracker'
+  'username' => 'patra',
+  'password' => 'P4tra@MySql#1',
+  'name' => 'ppn_data'
 ];
 
 $mysqli = new mysqli($dbconfig['host'], $dbconfig['username'], $dbconfig['password'], $dbconfig['name']);
