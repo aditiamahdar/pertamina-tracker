@@ -491,7 +491,8 @@ function addDataStorage() {
 
   var sess = wialon.core.Session.getInstance();
   var unit = sess.getItem( val );
-  var color = $("#color .template.active").data("bckgrnd");
+  // var color = $("#color .template.active").data("bckgrnd");
+  var color = 'fe0000';
 
   var render = sess.getRenderer();
   var obj = layer_temp; // get template and set values
@@ -1042,7 +1043,7 @@ function showHoverInfo(item) {
   }
 }
 
-function addSPBUMarkers(unitId, data){
+function addSPBUMarkers(data){
   // var spbuIcon = L.icon({
   //   iconUrl: "img/stop.png",
   //   iconSize: [30, 30],
@@ -1058,8 +1059,7 @@ function addSPBUMarkers(unitId, data){
     });
     var latlong = L.latLng(spbu.latitude, spbu.longitude);
     var spbuMarker = L.marker(latlong, {
-      icon: spbuIcon,
-      unitId: unitId
+      icon: spbuIcon
     });
     markersLayer.addLayer(spbuMarker);
   })
@@ -1076,7 +1076,7 @@ function initTrack(layer, color, batch) {
   var first = layer.getFirstPoint();
   var last = layer.getLastPoint();
 
-  if (spbu_data.length > 0) addSPBUMarkers(unitId, spbu_data);
+  if (spbu_data.length > 0) addSPBUMarkers(spbu_data);
 
   if( DataStorage[unitId] ){ // update
 
