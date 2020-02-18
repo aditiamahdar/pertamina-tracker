@@ -65,6 +65,7 @@ var idTimeout = 0;
 var tz = 0, dst = 0;
 
 var LANG = "";
+var stopMarkers = {};
 /** * * * * * * * * * * * * * * *
 * WialonSDK and Leaflet init *
 * * * * * * * * * * * * * * * * */
@@ -1044,12 +1045,6 @@ function showHoverInfo(item) {
 }
 
 function addSPBUMarkers(data){
-  // var spbuIcon = L.icon({
-  //   iconUrl: "img/stop.png",
-  //   iconSize: [30, 30],
-  //   iconAnchor: [15, 15]
-  // });
-
   data.forEach(function(spbu){
     var spbuIcon = L.divIcon({
       className: 'spbu-icon',
@@ -2022,11 +2017,21 @@ function findPos(time, i) {
 
 function showStopInfo(pos, id) { // show stop marker when unit doesnt move
   var latlng = L.latLng(pos.y, pos.x);
-  if (pos.move) {
-    markersLayer.removeLayer(DataStorage[id].stopMarker);
-  } else {
-    DataStorage[id].stopMarker.setLatLng(latlng).addTo(markersLayer);
+  if (!pos.move) {
+    var key = pos.y+','+pos.x;
+    if(stopMarkers[key] == undefined) {
+      stopMarkers[key] = L.marker(latlng, {
+        icon: stopIcon
+      });
+    }
+    markersLayer.removeLayer(stopMarkers[key]);
+    markersLayer.addLayer(stopMarkers[key]);
   }
+  // if (pos.move) {
+  //   markersLayer.removeLayer(DataStorage[id].stopMarker);
+  // } else {
+  //   DataStorage[id].stopMarker.setLatLng(latlng).addTo(markersLayer);
+  // }
 }
 
 function getDataStorageCount() { // get count of shown tracks

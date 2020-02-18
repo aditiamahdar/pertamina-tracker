@@ -12,7 +12,9 @@ $spbu = filter_input(INPUT_GET, 'spbu', FILTER_SANITIZE_URL);
 
 $from = str_replace(' ', 'T', $in_from);
 $to = str_replace(' ', 'T', $in_to);
-$autoplay = 1;
+$autoplay = filter_input(INPUT_GET, 'autoplay', FILTER_SANITIZE_URL);
+if(!isset($autoplay))
+  $autoplay = 1;
 $domain = "https://patra.fleetsight.dev/track";
 // $domain = "http://localhost:8888";
 
