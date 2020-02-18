@@ -39,6 +39,7 @@ var map,
   eventsLayer,
   markersLayer,
   stopIcon,
+  biggerStopIcon,
   unitinfobox;
 
 // time variables: start of interval, end of interval
@@ -274,6 +275,11 @@ function initMap(session) {
   stopIcon = L.icon({
     iconUrl: "img/stop.png",
     iconSize: [21, 20],
+    iconAnchor: [0, 0]
+  });
+  biggerStopIcon = L.icon({
+    iconUrl: "img/stop.png",
+    iconSize: [26, 25],
     iconAnchor: [0, 0]
   });
 
@@ -2021,7 +2027,7 @@ function showStopInfo(pos, id) { // show stop marker when unit doesnt move
     var key = pos.y+','+pos.x;
     if(stopMarkers[key] == undefined) {
       stopMarkers[key] = L.marker(latlng, {
-        icon: stopIcon
+        icon: biggerStopIcon
       });
     }
     markersLayer.removeLayer(stopMarkers[key]);
