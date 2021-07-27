@@ -547,12 +547,13 @@ var play = function(){
 }
 
 var playFullMap = function(){
-  play();
   $('#menu').hide();
+  $('#control-wrapper').hide();
   $('#map').css({left: '0px'});
+
+  play();
   $('.unit_follow_btn').click();
   $("#step").slider("value", 9);
-  $('#control-wrapper').hide();
 }
 
 function updateDataStorage(id) {
