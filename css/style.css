@@ -325,3 +325,13 @@ button:focus {
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current { float: left; }
 .ui-datepicker .ui-state-active{ font-weight:bold; background: #394656; }
 .ui-datepicker .ui-datepicker-unselectable { color:#6c737b }
+
+
+#menu,
+#control-wrapper {
+  display: none !important;
+}
+
+#map {
+  left: 0px;
+}
